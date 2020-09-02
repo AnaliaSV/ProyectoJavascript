@@ -1,0 +1,72 @@
+@charset "UTF-8";
+:root {
+  font-size: 17px; 
+}
+
+body {
+    position: relative;
+    padding-bottom: 120px;
+}
+
+h2 {
+    font-size:3rem;
+}
+
+section {
+    margin:20px ;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top:70px;
+}
+
+.bg-grey {
+    background: grey;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: 0px;
+}
+.btn-outline-success {
+    color:whitesmoke;
+    border: black;
+    background: black;
+}
+
+.btn-outline-success:hover{
+    color:black;
+    border: white;
+    background: white;
+}
+
+
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show > .btn-outline-success.dropdown-toggle {
+    color: grey;
+    background-color: #fff;
+    border-color: black;
+}
+.btn-outline-success.focus, .btn-outline-success:focus {
+    box-shadow: 0 0 0 .2rem rgba(204, 204, 204, 0.5);
+}
+.footer p {
+    font-weight:300, bold;
+    font-size:1.2rem;
+    text-align: center;
+    padding:1.5rem;
+    
+}
+
+#carrito-container li {
+    display:block;
+    padding:.75rem 1.25rem;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);   
+}

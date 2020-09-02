@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-grey">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="carrito.html">carrito <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">novedades</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+    </header>   
+    <section>  
+        <div class="col-md-4 order-md-2 mb-4">
+        <h2 class="d-flex justify-content-between align-items-center mb-3">Mi pedido</h2>
+        <form id="form-content">
+          <input type="text" name="pedido">
+          <button type="submit" id="btnEnviar">Agregar a mi pedido</button>
+        </form>  
+          <ul class="list-group mb-3" id="carrito-container">            
+          </ul>
+        <script>
+
+            //arrays //  idea del carrito
+
+            let combo1 = ["1- carne vacuna", "2- pan frances", "3- jamon","4- queso" , "5- papas", "6- gaseosa"];
+            let combo2 = ["1- carne cerdo" ,"2- pan negro","3- lechuga", "4- tomate", "5- rabas", "6- agua mineral"];
+            let combo3 = ["1- milanesa de soja" ,"2- pan integral","3- lechuga", "4- tomate", "5- ensalada", "6- agua savorizada"];
+            
+            let miPedido = [];
+
+            let carritoContainer =document.getElementById('carrito-container');
+            let formContent = document.getElementById('form-content');
+            formContent.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let pedido = event.target.elements.pedido.value
+            miPedido.push(pedido);
+            pedidoTodo();
+        })
+        function pedidoTodo() {
+            if(miPedido.length > 0) {
+              carritoContainer.appendChild(buildItem(miPedido.pop()));
+            }
+        }
+
+          combo1.forEach(menuContent => { 
+          let item =document.createElement('li');
+          item.textContent=menuContent;
+          carritoContainer.appendChild(item);
+          });
+
+          function buildItem(todoItem) {
+          let item = document.createElement('li');
+          item.textContent = todoItem;
+          return item;
+        }
+        </script>
+    </div>
+    </section>
+    <footer class="footer bg-grey">
+        <p> copyright 2020</p>
+     </footer>
+ </body>
+ </html>
