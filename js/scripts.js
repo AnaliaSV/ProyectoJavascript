@@ -1,36 +1,91 @@
-//arrays
+const donBuilder = new DOMBuilder ();
 
-let combo1 = ["carne vacuna", "pan frances", "jamon","queso" , "papas", "gaseosa"];
-let combo2 = ["carne cerdo" ,"pan negro","lechuga", "tomate", "rabas", "agua mineral"];
-let combo3 = ["milanesa de soja" ,"pan integral","lechuga", "tomate", "ensalada", "agua savorizada"];
+function buildProductCard(combo) {
+    const div = document.createElement('div');
+    div.classList.add('card-body');
 
-let pedidos=[];
+    const image = donBuilder.img(combo.image);
+    const title = donBuilder.h5(combo.name);      
+    const description = donBuilder.p(combo.description);
+    const price= donBuilder.p(combo.price);
+    const button=donBuilder.button('add to cart', 'btnProduct','btn','btn-primary',combo.id);
 
-//************PRECIOS***************
-let precioCombo1 =300;
-let precioCombo2 =400;
-let precioCombo3 =500;
-let precioEnvio =100;
+    div.appendChild(image)
+    div.appendChild(title)
+    div.appendChild(description)
+    div.appendChild(price)
+    div.appendChild(button);
 
-//cambia titulo de la comida en base a la promo
+    return div;
+}
+
+ function buildSelectedProducts() {
+       const selectedProductsContainer = document.getElementById('selectedProductsContainer');
+       const lastProduct = selectedProducts[selectedProducts.length-1];
+       const card = buildProductCard(lastProduct);
+       selectedProductsContainer.appendChild(card); 
+}
+
+function onSelectClick(event) {
+    const selectedId = event.target.dataset.id;
+    
+    let selectedProduct ={};
+         combos.forEach(combo => {
+             if(parseInt(combo.id) === parseInt(selectedId)) {
+                 selectedProduct=combo;
+             }
+         });
+
+         selectedProducts.push(selectedProduct);
+         buildSelectedProducts()
+         console.log(selectedProduct);
+    }
+window.addEventListener('DOMContentLoaded', () => {
+     const productsContent = document.getElementById('productsContent');
+    
+     combos.forEach(combo=>{
+        const card =buildProductCard(combo);
+        productsContent.appendChild(card);
+        });
+
+    const btnProducts = document.querySelectorAll(".btnProduct");
+    btnProducts.forEach(btnProduct => {
+        btnProduct.addEventListener("click", onSelectClick)
+    })
+});
+
+
+
+
+//Hay dos div en html para poder poner el evento de cambiarle el titulo segun la hora
 
 let date = new Date();
 let currentHour = date.getHours(); 
-console.log(currentHour);// te dice la hora
 let combosPromo = document.getElementById('promocion-varias');
 
-let hours =[
-    [7,11,'Promo desayuno'],
-    [12,15,'Promo almuerzo'],
-    [17,19,'Promo merienda'],
-    [20,23,'Promo cena']
-];
+let hours = [{
+    open: 6,
+    close: 10,
+    message: 'Hora del desayuno'
+},{
+    open: 12,
+    close: 15,
+    message: 'Hora del almuerzo'
+},{
+    open: 16,
+    close:19,
+    message: 'Hora de la merienda'
+},{
+    open: 20,
+    close: 24,
+    message: 'Hora del Cena'
+}];
 
 let msg='sin promo';
 
     hours.forEach((hour) => {
-    if(currentHour >= hour[0]&&currentHour<hour[1]){
-        msg=hour[2];
+    if(currentHour >= hour.open&&currentHour<hour.close){
+        msg=hour.message;
     }
 
     })
@@ -40,7 +95,6 @@ combosPromo.textContent=msg;
 //segunda promo, pero almuerzo solamente
 let date1 = new Date();
 let currentHourAlmuerzo = date.getHours();
-console.log(currentHourAlmuerzo);
 let combosPromoAlmuerzo = document.getElementById('promocion-almuerzo');
 
 hours.forEach((hour) => {
@@ -52,38 +106,3 @@ hours.forEach((hour) => {
 
     })
     combosPromoAlmuerzo.textContent=msg;
-
-    //  EN LA PAGINA carrito.html AGREGUE ESTO EN UN SCRIPT
-    /*
-            let combo1 = ["1- carne vacuna", "2- pan frances", "3- jamon","4- queso" , "5- papas", "6- gaseosa"];
-            let combo2 = ["1- carne cerdo" ,"2- pan negro","3- lechuga", "4- tomate", "5- rabas", "6- agua mineral"];
-            let combo3 = ["1- milanesa de soja" ,"2- pan integral","3- lechuga", "4- tomate", "5- ensalada", "6- agua savorizada"];
-            
-            let miPedido = [];
-
-            let carritoContainer =document.getElementById('carrito-container');
-            let formContent = document.getElementById('form-content');
-            formContent.addEventListener('submit', function(event) {
-            event.preventDefault();
-            let pedido = event.target.elements.pedido.value
-            miPedido.push(pedido);
-            pedidoTodo();
-        })
-            function pedidoTodo() {
-            if(miPedido.length > 0) {
-              carritoContainer.appendChild(buildItem(miPedido.pop()));
-            }
-        }
-
-          combo1.forEach(menuContent => { 
-          let item =document.createElement('li');
-          item.textContent=menuContent;
-          carritoContainer.appendChild(item);
-          });
-
-          function buildItem(todoItem) {
-          let item = document.createElement('li');
-          item.textContent = todoItem;
-          return item;
-        }
-    */

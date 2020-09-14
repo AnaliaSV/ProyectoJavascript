@@ -1,3 +1,5 @@
+/* GENERAL */
+
 @charset "UTF-8";
 :root {
   font-size: 17px; 
@@ -13,7 +15,18 @@ h2 {
 }
 
 section {
-    margin:20px ;
+    margin:10px ;
+}
+
+.bgc-wheat {
+    background-color: wheat;
+}
+.bgc-purple {
+    background-color: purple;
+}
+
+.bgc-thistle {
+    background-color: thistle;
 }
 
 .container {
@@ -26,14 +39,10 @@ section {
     background: grey;
 }
 
-.footer {
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    bottom:0;
-    right: 0;
-    left: 0;
-    margin: 0px;
+/* MENU & botones*/
+
+.btn {
+    background-color: rebeccapurple;
 }
 .btn-outline-success {
     color:whitesmoke;
@@ -56,6 +65,17 @@ section {
 .btn-outline-success.focus, .btn-outline-success:focus {
     box-shadow: 0 0 0 .2rem rgba(204, 204, 204, 0.5);
 }
+/* FOOTER */
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: 0px;
+}
 .footer p {
     font-weight:300, bold;
     font-size:1.2rem;
@@ -64,9 +84,17 @@ section {
     
 }
 
-#carrito-container li {
-    display:block;
-    padding:.75rem 1.25rem;
-    background-color: white;
-    border:1px solid rgba(0,0,0,.125);   
+/* SECCION 1 */
+.card-body {
+    margin:10px;
+    border:1px solid grey;
+    
+}
+
+/* SECCION 2 */
+.btn-carrito {
+    margin:20px ;
+    width: 15%;
+    margin: auto;
+    font-size:1rem ;
 }
