@@ -1,0 +1,67 @@
+ [{
+    "id": 1,
+    "name" : "Chicken Sandwich",
+    "type": "Combos Hamburguesas",
+    "query": "$combo 1",
+    "title" : "combo 1",    
+    "description" : "Sandwich de pechuga de pollo rebozada con lechuga, tomate, cebolla morada y mayonesa.",
+    "thumbnail": "./imagenes/chicken-sandwich.jpg",
+    "price" : 300,
+    "available" : true,
+    "tags" : ["Carne", " tomate", " lechuga", " rabas", " pan negro"]
+},{
+    "id": 2,
+    "name" : "Cheeseburguer",
+    "type": "Combos Hamburguesas",
+    "query": "$combo 2",
+    "title" : "combo 2",    
+    "description" : "Hamburguesa casera con queso cheddar, lechuga, tomate, cebolla y salsa burger.",
+    "thumbnail": "./imagenes/cheeseburguer.jpg",
+    "price" : 400,
+    "available" : true,
+    "tags" : ["Pollo", " jamon", " queso", " papas fritas", " pan frances"]
+},{
+    "id": 3,
+    "name" : "Double burguer",
+    "type": "Combos Hamburguesas",
+    "query": "$combo 3",
+    "title" : "combo 3",
+    "description" : "Hamburguesa casera con panceta, queso cheddar, lechuga, tomate y cebolla.",
+    "thumbnail": "./imagenes/double-burguer.jpg",
+    "price" : 500,
+    "available" : true,
+    "tags" : ["Cordero", " jamon crudo", " cebolla", " papas fritas", " pan integral"]
+},{
+    "id": 4,
+    "name" : "Red Lager",
+    "type": "Bebidas",
+    "query": "$Cerveza",
+    "title" : "promo 1",
+    "description" : "Cerveza de sabor acaramelado y de color rojo, elaborada con maltas tostadas.",
+    "thumbnail": "./imagenes/cerveza-roja.jpg",
+    "price" : 50,
+    "available" : false,
+    "tags"  : ["Cerveza artesanal"]
+},{
+    "id": 5,
+    "name" : "Bohemian Pilsner",
+    "type": "Bebidas",
+    "query": "$Gaseosa",
+    "title" : "promo 2",
+    "description" : "Cerveza rubia, suave con un ligero amargor generoso, aroma cítrico y frutal.",
+    "thumbnail": "./imagenes/cerveza-rubia.jpg",
+    "price" : 50,
+    "available" : false,
+    "tags" : ["cerveza artesanal"]
+},{
+    "id": 6,
+    "name" : "Limonada clásica",
+    "type": "Bebidas",
+    "query": "$Soda",
+    "title" : "promo 3",
+    "description" : "Agua mineral llena de sabor, mezclandolo con el sabor del limón tucumano.",
+    "thumbnail": "./imagenes/limonada.jpg",
+    "price" : 50,
+    "available" : false,
+    "tags"  : ["Limonada Clásica"]
+}]
