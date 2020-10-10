@@ -11,7 +11,7 @@
     "tags" : ["Carne", " tomate", " lechuga", " rabas", " pan negro"]
 },{
     "id": 2,
-    "name" : "Cheeseburguer",
+    "name" : "Cheeseburger",
     "type": "Combos Hamburguesas",
     "query": "$combo 2",
     "title" : "combo 2",    
@@ -22,7 +22,7 @@
     "tags" : ["Pollo", " jamon", " queso", " papas fritas", " pan frances"]
 },{
     "id": 3,
-    "name" : "Double burguer",
+    "name" : "Double burger",
     "type": "Combos Hamburguesas",
     "query": "$combo 3",
     "title" : "combo 3",

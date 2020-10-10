@@ -45,9 +45,9 @@ let combosPromoMerienda = document.getElementById('promocion-merienda');
 
 hours.forEach((hour) => {
     if(currentHourMerienda >= 20&&currentHourMerienda<23){
-        msg= "2x1 Double Burguer"
+        msg= "2x1 Double Burger"
     }else {
-        msg='Cheeseburguer'
+        msg='Double Burger'
     }
 
     })
@@ -60,9 +60,9 @@ let combosPromoCena = document.getElementById('promocion-cena');
 
 hours.forEach((hour) => {
     if(currentHourCena>=20 && currentHourCena<23){
-        msg='2x1 Double Burguer'
+        msg='2x1 Cheeseburger'
     }else {
-        msg='Double Burguer'
+        msg='Cheeseburger'
     }
 
     })
